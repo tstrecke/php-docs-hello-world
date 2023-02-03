@@ -44,7 +44,7 @@ $serverName = "tcp:str-ibrot-dbsrv.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 /* Set up and execute the query. */  
-$tsql = "SELECT ArtikelID, Position, Menge FROM Bestellposition where BestellungID = $bnr";  
+$tsql = "SELECT * FROM Bestellposition where BestellungID = $bnr";  
 $stmt = sqlsrv_query( $conn, $tsql);  
 if( $stmt === false)  
 {  
