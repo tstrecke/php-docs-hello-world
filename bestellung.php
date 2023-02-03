@@ -96,7 +96,6 @@ sqlsrv_close( $conn);
 } */
 echo "</table>"; 
 echo "<tbody>";  
-   
 ?>                       <!-- Ende PHP--> 
 </body>                  <!-- Ende HTML-Body--> 
 </html>                  <!-- Ende HTML--> 
