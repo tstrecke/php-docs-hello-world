@@ -39,19 +39,18 @@ catch (PDOException $e) {
 }
 
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "str", "pwd" => "AzUrE2o23@BKR", "Database" => "ibrot", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$connectionInfo = array("UID" => "str", "pwd" => 'AzUrE2o23@BKR', "Database" => "ibrot", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:str-ibrot-dbsrv.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 /* Set up and execute the query. */  
-$tsql = "SELECT ArtikelID, Position, Menge FROM Bestellposition where BestellungID =" + $bnr;  
+$tsql = "SELECT ArtikelID, Position, Menge FROM Bestellposition where BestellungID = $bnr";  
 $stmt = sqlsrv_query( $conn, $tsql);  
 if( $stmt === false)  
 {  
      echo "Error in query preparation/execution.\n";  
      die( print_r( sqlsrv_errors(), true));  
 }  
-
  
 /* Daten in einem assoziativen Array definieren*/ 
 /*$daten = array ( 
